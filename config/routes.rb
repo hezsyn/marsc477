@@ -9,4 +9,8 @@ root 'sessions#new'
   resources :users
   resources :sessions
 
+  resources :admins
+  get 'simulations', to: 'simulations#view', as: 'simulations'
+  resources :dataviews
+
 end
