@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+    <div class="container-fluid">
+        <div class="col-md-2">
+            <%= render 'layouts/support/navigation' %>
+        </div>
+    </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
+
+
