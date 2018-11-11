@@ -1,0 +1,2 @@
+class EngineControl < ApplicationRecord
+end
