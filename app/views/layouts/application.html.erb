@@ -10,15 +10,13 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-    <div class="container-fluid">
-        <div class="col-md-2">
-            <%= render 'layouts/support/navigation' %>
-        </div>
-    </div>
-    <% end %>
+  <% if logged_in? %>
+    <%= render 'layouts/navigation' %>
+  <% end %>
 
+  <% if logged_in? != true %>   
     <%= yield %>
+  <% end %>
 
   </body>
 </html>

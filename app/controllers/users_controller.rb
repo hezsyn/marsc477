@@ -1,21 +1,16 @@
 class UsersController < ApplicationController
 
   def index
-    @assets = User.all
-    @title = "Users"
+    @users = User.all
   end
 
   def show
-    @assets = User.all
+    @users = User.all
     @user = User.find(params[:id])
-    @title = "Users"
-    @notes = @user.user_notes.all
-    @newNote = @user.user_notes.new
   end
 
   def new
-    @title = "Users"
-    @assets = User.all
+    @users = User.all
     @user = User.new
   end
 
@@ -31,8 +26,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @title = "Users"
-    @assets = User.all
+    @users = User.all
     @user = User.find(params[:id])
   end
 
