@@ -33,6 +33,13 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    if @user.update(user_params)
+      flash[:alert] = "User #{@user.user_name} has updated"
+      redirect_to user_path(@user)
+    else
+      flash[:notice] = "Failed to update user"
+      redirect_to user_path(@user)
+    end
   end
 
  def destroy

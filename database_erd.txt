@@ -1,0 +1,44 @@
+Simulation
+  - Name
+  - User_id
+    \ - Trajectory
+      - sim_id
+      - x_position
+      - y_position
+      - z_position
+
+    \ - Logs
+      - message
+      - values
+      - category
+      - subcategory
+
+    \ - Commands
+      - input
+      - value
+
+    \ - Join - 
+      - Value
+      / - Sensors 
+        - Part
+        - description
+        - Min
+        - Max
+        - unit
+
+    \ - Join - 
+      - Value
+      / - EngineDetails
+         - Part
+         - Min
+         - Max 
+
+Users
+- first_name
+- last_name
+- email
+- password_digest
+- department
+    \ - Join - 
+      / - Roles
+         - name
