@@ -10,6 +10,6 @@ root 'sessions#new'
   resources :sessions
 
   get 'simulation', to: 'simulations#view', as: 'simulation'
-  resources :dataviews
+  get 'simulation_history', to: 'simulation#history', as: 'history'
 
 end
