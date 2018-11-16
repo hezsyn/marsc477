@@ -1,0 +1,35 @@
+Folder Layout
+
+	The whole application is saved.  The files/folders below are the main ones for these to work.
+
+- Gemfile - This file sets the dependencies and what needs to be installed to get things working.  When first downloading the project.  Ensure you run bundle install.  This will install all dependencies. 
+
+app - \
+			\ assets 
+				- This location has all the CSS / Javascript / Images for the application
+			\ controllers 
+				- This has all the controllers for the applications.  Controllers control different segments of the program.  Each method has a view to display.  These are in plural form.
+			\ helpers 
+				- This folder has methods that could be used throughout the application.  Good location for a method that would be used multiple different components.
+			\ models
+				- Models interact with different parts of the database.  These have been created to validate and create the database tables.  The names are singular version of the data to be held.  
+			\ views
+				- These are the pages displayed to the user.  Segmented by names for the controller.  The name of the pages is based off the method from the controller
+
+config - \
+				\ routes.rb
+					- This file controls the traffic of how the user does things
+				\ database.yml
+					- This file controls the connection to the database.  It is currently setup to connect to a posgresql database.  The credentials in this document are not what is used for production.  Running rails db:create, will create the databases set in this document.  
+
+db 		- \ 
+				\ migrate
+					- The files in this folder create the database.  Running rails db:migrate, will create the tabels based off these files.
+				\ seeds.rb
+					- This file populates the database with data.  Normally data needed before using the application.  Running rails db:seed will run this file.  
+
+test 		This folder is for setting automated testing for different functions.  What we want to test should have a method within one of the files within.
+
+tmp 		This folder is just files that assist with that instance of the server.  This is good to clear every so often.
+
+log			Any issues found, reported by rails can be found within here.  Very helpful if anything happens during production.
