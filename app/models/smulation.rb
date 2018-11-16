@@ -1,2 +1,0 @@
-class Smulation < ApplicationRecord
-end

@@ -9,8 +9,9 @@ class CreateEngines < ActiveRecord::Migration[5.2]
     end
 
     create_table :engines_simulations do |t|
-      t.references    :engine, index: true
-      t.references    :simulation, index: true
+      t.belongs_to    :engine, index: true
+      t.belongs_to   :simulation, index: true
+      t.timestamps
     end
   end
 end

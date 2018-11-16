@@ -19,8 +19,4 @@ module ApplicationHelper
 	    end
 	end
 
-	def active_class(level)
-	
-	end
-
 end

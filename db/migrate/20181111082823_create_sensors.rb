@@ -11,9 +11,10 @@ class CreateSensors < ActiveRecord::Migration[5.2]
     end
 
     create_table :sensors_simulations do |t|
-      t.references  :sensor, index: true
-      t.references  :simulation, index: true
+      t.belongs_to  :sensor, index: true
+      t.belongs_to  :simulation, index: true
       t.string      :value
+      t.timestamps
     end
   end
 end

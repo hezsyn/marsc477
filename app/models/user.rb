@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-	has_many :roles
+	has_many 	:roles
+	has_many 	:simulations
 	has_secure_password
 
 	def full_name

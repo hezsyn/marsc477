@@ -1,0 +1,59 @@
+commit 9c1eb3d1e5cd2b04778849bbb9364c2e75196fc2
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Nov 16 10:52:18 2018 -0800
+
+    Folder Layout explained
+
+commit bfed7ffa172fc7bbae5e66a41ae2ef84949861bd
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Wed Nov 14 23:48:30 2018 -0800
+
+    End of night work
+
+commit c98c11c8aa2996178397128e1b8028de00e97be2
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Wed Nov 14 22:59:01 2018 -0800
+
+    Changed the navigation, removed dataview controller
+
+commit 18fb1c4a89120ac8ebff31a42ae7c42e9846e529
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Wed Nov 14 22:24:07 2018 -0800
+
+    Able to update User information.
+
+commit cbd354c6d291237742184bacf926062b8adb3e12
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Sun Nov 11 01:18:25 2018 -0800
+
+    Setting up for the database
+
+commit f4dfeab36efdc69797e0b5f2ab41fe51f3664bdd
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Sun Nov 11 00:04:09 2018 -0800
+
+    admin section created
+
+commit 347481a3321cc2429b3e1b79f1f819cbead842a3
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Sat Nov 10 18:10:03 2018 -0800
+
+    Login function working
+
+commit c9ab4fdc76a4721d042318fc4a76c945597ec459
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Nov 9 16:51:53 2018 -0800
+
+    Migrating home
+
+commit 317ead9fe998775aec8c1bd6020aeaea62fd63f2
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Nov 9 15:39:41 2018 -0800
+
+    Bootstrap added
+
+commit 6cc26e42f58756e2b8c394ce31af435a3702cee7
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Thu Nov 8 22:51:33 2018 -0800
+
+    Initial
