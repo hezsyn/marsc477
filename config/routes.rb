@@ -9,7 +9,6 @@ root 'sessions#new'
   resources :users
   resources :sessions
 
-  get 'simulation', to: 'simulations#view', as: 'simulation'
-  get 'history', to: 'simulation#history', as: 'history'
+  get 'simulation', to: 'simulations#view'
 
 end
