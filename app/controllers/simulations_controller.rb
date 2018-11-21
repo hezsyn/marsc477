@@ -8,6 +8,6 @@ class SimulationsController < ApplicationController
 
 private
 	def sim_params
-		params.permit(:simulation).require(:name, :x_position, :y_position, :z_position)
+		params.require(:simulation).permit(:name, :x_position, :y_position, :z_position)
 	end
 end
