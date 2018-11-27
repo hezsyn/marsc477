@@ -10,13 +10,9 @@
   </head>
 
   <body>
-  <% if logged_in? %>
     <%= render 'layouts/navigation' %>
-  <% end %>
 
-  <% if logged_in? != true %>   
     <%= yield %>
-  <% end %>
 
   </body>
 </html>

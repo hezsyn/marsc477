@@ -1,3 +1,6 @@
+*** Author Brandon Heinrichs
+*** Team B
+
 Simulation
   - Name
   - User_id

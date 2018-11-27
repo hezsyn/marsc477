@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
 
+  layout false
+
   def new
     if @current_user != nil
-      redirect_to simulation_path
+      redirect_to login_path
     end
   end
 
@@ -12,7 +14,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to simulation_path, notice: 'Logged in!'
     else
-      redirect_to root_path, alert: 'Incorrect log in credentials'
+      redirect_to login_path, alert: 'Incorrect log in credentials'
     end
   end
 

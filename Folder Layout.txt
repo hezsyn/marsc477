@@ -1,5 +1,8 @@
 Folder Layout
 
+*** Author Brandon Heinrichs
+*** Team B
+
 	The whole application is saved.  The files/folders below are the main ones for these to work.
 
 - Gemfile - This file sets the dependencies and what needs to be installed to get things working.  When first downloading the project.  Ensure you run bundle install.  This will install all dependencies. 

@@ -1,3 +1,21 @@
+commit e6a39e0bf41644403fb09e0c5a7279111049e5ca
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Wed Nov 21 07:39:52 2018 -0800
+
+    Nightly
+
+commit 3d2ed7ffdbea08fe68fa627d6b64017928570a8f
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Mon Nov 19 08:34:41 2018 -0800
+
+    Removing the history controller
+
+commit 3c0fc5b9a0b62e572076653c55e95426170d5723
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Nov 16 13:14:37 2018 -0800
+
+    Database created
+
 commit 9c1eb3d1e5cd2b04778849bbb9364c2e75196fc2
 Author: Brandon <jebster1988@hotmail.com>
 Date:   Fri Nov 16 10:52:18 2018 -0800
