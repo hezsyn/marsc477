@@ -13,6 +13,11 @@
       </ul>
     <% end %>
 
+    <div class="input-group mb-2">
+      <%= user.label :user_name, class: "input-group-prepend input-group-text" %>
+      <%= user.text_field :user_name, class: "form-cntrol" %>
+    </div>
+
     <div class="input-group mb-2"> 
       <%= user.label :email, class: "input-group-prepend input-group-text" %>
       <%= user.text_field :email, class: "form-control" %>
