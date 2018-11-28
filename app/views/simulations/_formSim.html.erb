@@ -1,0 +1,21 @@
+<%= form_for @simulation do |sim| %>
+
+  <div class="input-group mb-2">
+    <%= sim.label :name, class: "input-group-prepend input-group-text" %>
+    <%= sim.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="input-group mb-2">
+    <%= sim.label :x_position, class: "input-group-prepend input-group-text" %>
+    <%= sim.text_field :x_position, class: "form-control" %>
+
+    <%= sim.label :y_position, class: "input-group-prepend input-group-text" %> 
+    <%= sim.text_field :y_position, class: "form-control" %>
+
+    <%= sim.label :z_position, class: "input-group-prepend input-group-text" %>
+    <%= sim.text_field :z_position, class: "form-control" %>
+  </div>
+
+  <%= sim.submit class: "btn btn-success" %>
+
+<% end %>

@@ -8,7 +8,5 @@ root 'sessions#new'
 
   resources :users
   resources :sessions
-
-  get 'simulation', to: 'simulations#view'
-
+  resources :simulations
 end

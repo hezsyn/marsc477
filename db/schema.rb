@@ -89,19 +89,13 @@ ActiveRecord::Schema.define(version: 2018_11_16_194910) do
   create_table "simulations", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_simulations_on_user_id"
-  end
-
-  create_table "trajectories", force: :cascade do |t|
-    t.bigint "simulation_id"
     t.integer "x_position"
     t.integer "y_position"
     t.integer "z_position"
+    t.integer "success"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["simulation_id"], name: "index_trajectories_on_simulation_id"
+    t.index ["user_id"], name: "index_simulations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
