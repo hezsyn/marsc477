@@ -28,6 +28,7 @@ class SimulationsController < ApplicationController
 
   def update
     @simulation = Simulation.find(params[:id])
+    @simulation.success?
     if @simulation.update(sim_params)
       flash[:notice] = "Simulation updated"
       redirect_to simulation_path(@simulation)
