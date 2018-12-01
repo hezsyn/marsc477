@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-4">
   	<%= render 'listSims' %>
   </div>  
 
@@ -11,6 +11,22 @@
     <div class="row">
     <%= render 'formSim' %>
     </div>
+  </div>
+
+  <div class="col-md-4">
+      <% if @simulation.success == 1 %>
+          <div class="text-success">
+              <h1>
+                Landed Successfully
+              </h1>
+          </div>
+      <% else %>
+        <div class="text-danger">
+          <h1>
+            Crash Landed            
+          </h1>
+        </div>
+      <% end %>
   </div>
     
 </div>
