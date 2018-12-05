@@ -7,6 +7,9 @@ class SimulationsController < ApplicationController
 	def show
 		@simulations = Simulation.all
     @simulation = Simulation.find(params[:id])
+    @xpos = @simulation.x_position
+    @ypos = @simulation.y_position
+    @zpos = @simulation.z_position
 	end
 
   def new

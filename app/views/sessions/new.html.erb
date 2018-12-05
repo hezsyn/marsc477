@@ -8,11 +8,7 @@
     Login
   </h1>
 
-  <% flash.each do |key, value| %>
-    <div class="<%= flash_class(key.to_sym) %>">
-          <%= value %>
-    </div>
-  <% end %>
+  <%= render 'layouts/alerts' %>
   
   <%= render 'userForm' %>
 

@@ -1,16 +1,32 @@
 <div class="row">
-  <div class="col-md-3">
-    <%= render 'listSims' %>
-  </div>  
+  <div class="col-md-4">
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'btnFunctions' %>    
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'listSims' %>
+      </div>
+    </div>
+
+  </div>
 
   <div class="col-md-4">
     <div class="row">
-      <%= render 'btnFunctions' %>
+      <div class="col-md-12">
+        <%= render 'layouts/alerts' %>
+      </div>
     </div>
 
     <div class="row">
-    <%= render 'formSim' %>
+      <div class="col-md-12">
+        <%= render 'formSim' %>
+      </div>
     </div>
+
   </div>
-    
 </div>

@@ -1,32 +1,86 @@
 <div class="row">
   <div class="col-md-4">
-  	<%= render 'listSims' %>
-  </div>  
 
-  <div class="col-md-4">
     <div class="row">
-      <%= render 'btnFunctions' %>
+      <div class="col-md-12">
+        <%= render 'btnFunctions' %>    
+      </div>
     </div>
 
     <div class="row">
-    <%= render 'formSim' %>
+      <div class="col-md-12">
+        <%= render 'listSims' %>
+      </div>
     </div>
+
   </div>
 
   <div class="col-md-4">
-      <% if @simulation.success == 1 %>
-          <div class="text-success">
-              <h1>
-                Landed Successfully
-              </h1>
-          </div>
-      <% else %>
-        <div class="text-danger">
-          <h1>
-            Crash Landed            
-          </h1>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'layouts/alerts' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'formSim' %>
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="col-md-4">
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <table class="table table-bordered">
+        <% [1,2,3,4].each do |phase| %>
+          <thead>
+            <tr>
+              <th class="cell-3">
+                Phase <%= phase %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <% @zpos = @ypos / 1.5 %>
+              <%= @zpos.round(2) %>
+            </td>
+
+            <td>
+              <% @zpos = @ypos / 1.5 %>
+              <%= @zpos.round(2) %>
+            </td>
+
+            <td>
+              <% @zpos = @ypos / 1.5 %>
+              <%= @zpos.round(2) %>
+            </td>
+            
+          </tr>
+          </tbody>
+        <% end %>
+        </table>
+    </div>
+
+    <% if @simulation.success == 1 %>
+        <div class="text-success text-center">
+            <h1>
+              Landed Successfully
+            </h1>
         </div>
-      <% end %>
+    <% else %>
+      <div class="text-danger text-center">
+        <h1>
+          Crash Landed            
+        </h1>
+      </div>
+    <% end %>
   </div>
     
 </div>
