@@ -2,14 +2,12 @@ class SimulationsController < ApplicationController
 
   def index
     @simulations = Simulation.all
+    @simulation = Simulation.first
   end
 
 	def show
 		@simulations = Simulation.all
     @simulation = Simulation.find(params[:id])
-    @xpos = @simulation.x_position
-    @ypos = @simulation.y_position
-    @zpos = @simulation.z_position
 	end
 
   def new
@@ -18,26 +16,34 @@ class SimulationsController < ApplicationController
   end
 
   def create
+    @time = Time.now
+    @simulations = Simulation.all
     @simulation = Simulation.new(sim_params)
+    @simulation.name = Time.now
     @simulation.user_id = session[:user_id]
     @simulation.success?
     if @simulation.save
       flash[:notice] = "Simulation submitted sucessfully."
-      redirect_to simulation_path(@simulation)
+      render :show
     else 
       flash[:alert] = "Simulation Failed" 
+      render :new
     end
   end
 
   def update
-    @simulation = Simulation.find(params[:id])
+    @time = Time.now
+    @simulations = Simulation.all
+    @simulation = Simulation.new(sim_params)
+    @simulation.name = Time.now
+    @simulation.user_id = session[:user_id]
     @simulation.success?
-    if @simulation.update(sim_params)
-      flash[:notice] = "Simulation updated"
-      render simulation_path(@simulation)
-    else
-      flash[:alert] = "Failure to update"
-      render simulation_path(@simulation)
+    if @simulation.save
+      flash[:notice] = "Simulation submitted sucessfully."
+      render :show
+    else 
+      flash[:alert] = "Simulation Failed" 
+      render :new
     end
   end
 

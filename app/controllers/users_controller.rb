@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "Form is invalid" 
     end
-    render 'new'
+    render 'show'
   end
 
   def edit

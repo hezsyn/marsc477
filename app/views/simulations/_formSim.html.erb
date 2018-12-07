@@ -1,8 +1,7 @@
 <%= form_for @simulation do |sim| %>
 
   <div class="input-group mb-2">
-    <%= sim.label :name, class: "input-group-prepend input-group-text" %>
-    <%= sim.text_field :name, class: "form-control" %>
+    <%= @time %>
   </div>
 
   <div class="input-group mb-2">
@@ -16,6 +15,6 @@
     <%= sim.text_field :z_position, class: "form-control" %>
   </div>
 
-  <%= sim.submit class: "btn btn-success" %>
+  <%= sim.submit 'Create Simulation', class: "btn btn-success" %>
 
 <% end %>

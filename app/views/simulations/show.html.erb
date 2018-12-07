@@ -2,8 +2,11 @@
   <div class="col-md-4">
 
     <div class="row">
-      <div class="col-md-12">
-        <%= render 'btnFunctions' %>    
+      <div class="col-md-8">
+        <h1>Simulation History</h1>
+      </div>
+      <div class="col-md-4">
+        <%= render 'btnFunctions' %> 
       </div>
     </div>
 
@@ -16,49 +19,78 @@
   </div>
 
   <div class="col-md-4">
+
+    <div class="row">
+      <div class="col text-center">
+        <h1>
+          <%= @simulation.name %>
+        </h1>
+      </div>
+    </div>
     
     <div class="row">
-      <div class="col-md-12">
-        <%= render 'layouts/alerts' %>
+      <% ["x_position","y_position", "z_position"].each do |traj| %>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+              Starting <%= traj.sub("_", " ") .capitalize %>
+          </div>
+          <div class="card-body">
+            <%= @simulation.send(traj) %>
+          </div>
+        </div>
       </div>
+        <% end %>
     </div>
+    <br>
+
 
     <div class="row">
-      <div class="col-md-12">
-        <%= render 'formSim' %>
-      </div>
-    </div>
-  
-  </div>
 
-  <div class="col-md-4">
-
-    <div class="row">
+    <% @xpos = @simulation.x_position %>
+    <% @ypos = @simulation.y_position %>
+    <% @zpos = @simulation.z_position %>
 
       <div class="col-md-12">
         <table class="table table-bordered">
-        <% [1,2,3,4].each do |phase| %>
+        <% [1,2,3,4,5].each do |phase| %>
           <thead>
             <tr>
-              <th class="cell-3">
+              <th>
                 Phase <%= phase %>
+              </th>
+              <th colspan="2">
+                <% case phase %>
+                  <% when 1 %>
+                        Deploy parachute
+                  <% when 2 %>
+                          Adjusting the thrusters
+                  <% when 3 %>
+                          Reducing speed
+                  <% when 4 %>
+                          Aligning the ship to the earth
+                  <% when 5 %>
+                          Reducing the speed, preparing the landing gear
+                  <%  else  %>
+                          that is a moment
+                   <%end %>
               </th>
             </tr>
           </thead>
           <tbody>
           <tr>
             <td>
-              <% @zpos = @ypos / 1.5 %>
-              <%= @zpos.round(2) %>
+              <% @xpos = @xpos / 1.5 %>
+              <%= @xpos.round(2) %>
             </td>
 
             <td>
-              <% @zpos = @ypos / 1.5 %>
-              <%= @zpos.round(2) %>
+              <% @ypos = @ypos / 1.5 %>
+              <%= @ypos.round(2) %>
             </td>
 
             <td>
-              <% @zpos = @ypos / 1.5 %>
+              <% @zpos = @zpos / 1.5 %>
               <%= @zpos.round(2) %>
             </td>
             
@@ -67,20 +99,24 @@
         <% end %>
         </table>
     </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
 
-    <% if @simulation.success == 1 %>
-        <div class="text-success text-center">
-            <h1>
-              Landed Successfully
-            </h1>
-        </div>
-    <% else %>
-      <div class="text-danger text-center">
-        <h1>
-          Crash Landed            
-        </h1>
+          <% if @simulation.success == 1 %>
+                  <h1 class="text-success">
+                    Landed Successfully
+                  </h1>
+          <% else %>
+
+              <h1 class="text-danger">
+                Crash Landed            
+              </h1>
+          <% end %>
+
       </div>
-    <% end %>
+    </div>
+
   </div>
     
 </div>

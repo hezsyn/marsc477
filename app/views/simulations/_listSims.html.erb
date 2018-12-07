@@ -1,5 +1,4 @@
 <ul class="list-group">
-	<h2>Simulations</h2>
 	<% @simulations.each do |sim| %>
 		<li class="list-group-item list-group-flush">
 			<%=	link_to sim.name, simulation_path(sim) %>
