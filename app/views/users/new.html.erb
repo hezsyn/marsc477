@@ -1,10 +1,28 @@
 <div class="row">
-  <%= render 'btnFunctions' %>
-</div>
-
-<div class="row">
   
-  <%= render 'listUsers' %>
+  <div class="col-md-3">
 
-  <%= render 'userForm' %>
+    <div class="row">
+      <div class="col">
+        <%= render 'btnFunctions' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <%= render 'listUsers' %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col">
+        <%= render 'layouts/alerts' %>
+      </div>
+    </div>
+    <%= render 'userForm' %>
+  </div>
+
 </div>

@@ -9,12 +9,12 @@ class User < ApplicationRecord
                     format: { with: EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
+
 	def full_name
-		self.first_name + self.last_name
+		self.first_name + " " +self.last_name
 	end
 
-	def createUser
-		user_name = self.first_name[0] + self.last_name
-		user_name.downcase
-	end
 end

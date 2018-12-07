@@ -15,14 +15,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    @users = User.all
     @user = User.new(user_params)
-    @user.user_name = @user.createUser
     if @user.save
       flash[:notice] = "User has been created"
-      redirect_to user_path(@user)
-    else 
-        render 'new'
+    else
+      flash[:alert] = "Form is invalid" 
     end
+    render 'new'
   end
 
   def edit
@@ -31,15 +31,15 @@ class UsersController < ApplicationController
   end
 
   def update
+    @users = User.all
     @user = User.find(params[:id])
 
     if @user.update(user_params)
       flash[:alert] = "User #{@user.user_name} has updated"
-      redirect_to user_path(@user)
     else
       flash[:notice] = "Failed to update user"
-      redirect_to user_path(@user)
     end
+    render 'show'
   end
 
  def destroy
