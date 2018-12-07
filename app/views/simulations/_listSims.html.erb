@@ -1,7 +1,9 @@
-<ul class="list-group">
+<table class="table table-stripped table-hover ">
+    <tbody>
 	<% @simulations.each do |sim| %>
-		<li class="list-group-item list-group-flush">
-			<%=	link_to sim.name, simulation_path(sim) %>
-		</li>
+        <tr class="clickable-row" data-href=<%= simulation_path(sim) %>>
+            <td><%= sim.name %></td>
+        </tr>
 	<% end %>
-</ul>
+    </tbody>
+</table>

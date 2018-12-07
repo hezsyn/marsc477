@@ -4,3 +4,7 @@ $(document).ready ->
     $("#new_simulation").append xhr.responseText
   ).on "ajax:error", (event) ->
     $("#new_simulation").append "<p>ERROR</p>"
+
+$ ->
+  $(".clickable-row").click ->
+    window.location = $(this).data("href");
