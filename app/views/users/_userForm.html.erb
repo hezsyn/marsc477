@@ -1,7 +1,5 @@
 <%= form_for @user do |user| %>
 
-  <%= render 'layouts/errors' %>
-
   <div class="input-group mb-2">
     <%= user.label :user_name, class: "input-group-prepend input-group-text" %>
     <%= user.text_field :user_name, class: "form-control" %>

@@ -1,7 +1,7 @@
-<% if @kitty.errors.any? %>
+<% if kitty.errors.any? %>
 
   <ul>
-    <% @kitty.errors.full_messages.each do |message| %>
+    <% kitty.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %> 
   </ul>

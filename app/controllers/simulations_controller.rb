@@ -34,10 +34,10 @@ class SimulationsController < ApplicationController
     @simulation.success?
     if @simulation.update(sim_params)
       flash[:notice] = "Simulation updated"
-      redirect_to simulation_path(@simulation)
+      render simulation_path(@simulation)
     else
       flash[:alert] = "Failure to update"
-      redirect_to simulation_path(@simulation)
+      render simulation_path(@simulation)
     end
   end
 
