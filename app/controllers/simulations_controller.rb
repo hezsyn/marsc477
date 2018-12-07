@@ -1,8 +1,6 @@
 class SimulationsController < ApplicationController
 
-  def index
-    @simulations = Simulation.all
-    @simulation = Simulation.first
+  def index    
   end
 
 	def show

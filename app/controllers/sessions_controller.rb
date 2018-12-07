@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @simulation = Simulation.first
     user = User.find_by(user_name: params[:user_name])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to simulations_path, notice: 'Logged in!'
+      redirect_to simulation_path(@simulation), notice: 'Logged in!'
     else
       redirect_to login_path, alert: 'Incorrect log in credentials'
     end
