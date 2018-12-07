@@ -35,9 +35,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      flash[:alert] = "User #{@user.user_name} has updated"
+      flash[:notice] = "User #{@user.user_name} has updated"
     else
-      flash[:notice] = "Failed to update user"
+      flash[:alert] = "Failed to update user"
     end
     render 'show'
   end
