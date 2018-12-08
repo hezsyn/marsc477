@@ -6,6 +6,7 @@ class SimulationsController < ApplicationController
 	def show
 		@simulations = Simulation.all
     @simulation = Simulation.find(params[:id])
+    @time = Time.now
 	end
 
   def new

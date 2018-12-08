@@ -55,6 +55,7 @@
         <% [1,2,3,4,5].each do |phase| %>
           <thead>
             <tr>
+              <th>Time</th>
               <th>
                 Phase <%= phase %>
               </th>
@@ -77,23 +78,28 @@
             </tr>
           </thead>
           <tbody>
+            <% (1..5).each do %>
           <tr>
-            <td>
+            <td width="10%">
+                <% @time = @time - 30 %>
+                <%= Time.at(@time).strftime("%H:%M:%S") %>
+            </td>
+            <td width="30%">
               <% @xpos = @xpos / 1.5 %>
               <%= @xpos.round(2) %>
             </td>
 
-            <td>
+            <td width="30%">
               <% @ypos = @ypos / 1.5 %>
               <%= @ypos.round(2) %>
             </td>
 
-            <td>
+            <td width="30%">
               <% @zpos = @zpos / 1.5 %>
               <%= @zpos.round(2) %>
             </td>
-            
           </tr>
+            <% end %>
           </tbody>
         <% end %>
         </table>
