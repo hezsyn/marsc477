@@ -5,8 +5,6 @@ class Simulation < ApplicationRecord
 	has_and_belongs_to_many     :sensors
 
   validates :x_position, presence: true
-  validates :y_position, presence: true
-  validates :z_position, presence: true
 
   def success?
     maybe = Random.rand(100)

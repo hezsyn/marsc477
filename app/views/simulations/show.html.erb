@@ -29,79 +29,106 @@
     </div>
     
     <div class="row">
-      <% ["x_position","y_position", "z_position"].each do |traj| %>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-              Starting <%= traj.sub("_", " ") .capitalize %>
-          </div>
-          <div class="card-body">
-            <%= @simulation.send(traj) %>
-          </div>
-        </div>
-      </div>
-        <% end %>
-    </div>
-    <br>
 
-    <div class="row">
-
-    <% @xpos = @simulation.x_position %>
-    <% @ypos = @simulation.y_position %>
-    <% @zpos = @simulation.z_position %>
+    <% count = 0 %>
+    <% thrust = 0 %>
+    <% temp = 1447 %>
+    <% altitude = @simulation.x_position %>
+    <% descent = altitude / 24 %>
 
       <div class="col-md-12">
         <table class="table table-bordered">
-        <% [1,2,3,4,5].each do |phase| %>
-          <thead>
+          <thead class="text-center">
             <tr>
-              <th>Time</th>
               <th>
-                Phase <%= phase %>
+                Time
               </th>
-              <th colspan="2">
-                <% case phase %>
-                  <% when 1 %>
-                        Deploy parachute
-                  <% when 2 %>
-                          Adjusting the thrusters
-                  <% when 3 %>
-                          Reducing speed
-                  <% when 4 %>
-                          Aligning the ship to the earth
-                  <% when 5 %>
-                          Reducing the speed, preparing the landing gear
-                  <%  else  %>
-                          that is a moment
-                   <%end %>
+              <th>
+                Alttitude (ft)
+              </th>
+              <th>
+                Temp (C&#176;)
+              </th>
+              <th>
+                Thrust %
+              </th>
+              <th>
+                Status
               </th>
             </tr>
           </thead>
           <tbody>
+        <% [1,2,3,4,5].each do |phase| %>
             <% (1..5).each do %>
           <tr>
-            <td width="10%">
+            <td class="text-center" width="10%">
                 <% @time = @time - 30 %>
                 <%= Time.at(@time).strftime("%H:%M:%S") %>
             </td>
-            <td width="30%">
-              <% @xpos = @xpos / 1.5 %>
-              <%= @xpos.round(2) %>
+
+            <td class="text-center" width="10%">
+               <%= altitude %>
+            </td>
+            
+            <td class="text-center" width="10%">
+              <%= temp  %>
+            </td>
+  
+            <td class="text-center" width="10%">
+              <%= thrust %> 
             </td>
 
-            <td width="30%">
-              <% @ypos = @ypos / 1.5 %>
-              <%= @ypos.round(2) %>
-            </td>
-
-            <td width="30%">
-              <% @zpos = @zpos / 1.5 %>
-              <%= @zpos.round(2) %>
+            <td>
+              <% case phase %>
+                  <% when 1 %>
+                      <% if count <= 2  %>
+                        Phase 1 - Approaching Mars, communicating with Earth
+                       <% else %>
+                        Phase 1 - Rotating Lander towards Mars surface
+                       <% end %>
+                  <% when 2 %>
+                        <% if count <  6 %>
+                          Phase 2 - Parachute deplays
+                        <% elsif count == 7 %>
+                          Phase 2 - Heat shields released 
+                        <% else %>
+                          Phase 2 - Free Falling
+                        <% end %>
+                  <% when 3 %>
+                        <% if count <= 10 %>
+                          Phase 3 - Lander separates, deploying lander Parachute
+                        <% else %>
+                          Phase 3 - Lander is falling
+                        <% end %>
+                  <% when 4 %>
+                        <% if count == 16 %>
+                          Phase 4 - Airbags inflate
+                        <% elsif count == 18 || count == 19 %>
+                          Phase 4 - Retro rockets  fire off
+                          <% thrust = 100 %>
+                        <% else %>
+                          Phase 4 - Lander is falling
+                          <% thrust = 0 %>
+                        <% end %>
+                  <% when 5 %>
+                        <% if count == 20  %>
+                          Phase 5 - Parachute cut off / rockets released
+                          <% thrust = 0 %>
+                        <% elsif count == 24 %>
+                          Phase 5 - Lander impacts the ground
+                        <% else %>
+                          Phase 5 - Lander is free falling
+                        <% end %>
+                  <%  else  %>
+                          that is a moment
+              <%end %>
+              <% count += 1 %>
+              <% altitude = altitude - descent %>
             </td>
           </tr>
             <% end %>
-          </tbody>
         <% end %>
+          </tbody>
         </table>
     </div>
     </div>
@@ -143,20 +170,8 @@
               <br>
               <div class="input-group mb-3">
                 <span class="input-group-prepend">
-                <%= f.label :x_position, class: "input-group-text" %></span>
+                <%= f.label 'Altitude', class: "input-group-text" %></span>
                 <%= f.text_area :x_position, class: "form-control" %>
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-prepend">
-                <%= f.label :y_position, class: "input-group-text" %></span>
-                <%= f.text_area :y_position, class: "form-control" %>
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-prepend">
-                <%= f.label :z_position, class: "input-group-text" %></span>
-                <%= f.text_area :z_position, class: "form-control" %>
               </div>
 
           <div class="modal-footer">

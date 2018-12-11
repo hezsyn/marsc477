@@ -6,7 +6,7 @@ class SimulationsController < ApplicationController
 	def show
 		@simulations = Simulation.all
     @simulation = Simulation.find(params[:id])
-    @time = Time.now
+    @time = @simulation.created_at
 	end
 
   def new
@@ -18,7 +18,7 @@ class SimulationsController < ApplicationController
     @time = Time.now
     @simulations = Simulation.all
     @simulation = Simulation.new(sim_params)
-    @simulation.name = Time.now
+    @simulation.name = @time
     @simulation.user_id = session[:user_id]
     @simulation.success?
     if @simulation.save
@@ -31,9 +31,9 @@ class SimulationsController < ApplicationController
   end
 
   def update
-    @time = Time.now
     @simulations = Simulation.all
     @simulation = Simulation.new(sim_params)
+    @time = @simulation.created_at
     @simulation.name = Time.now
     @simulation.user_id = session[:user_id]
     @simulation.success?
