@@ -40,7 +40,7 @@
 
       <div class="col-md-12">
         <table class="table table-bordered">
-          <thead class="text-center">
+          <thead class="thead-dark text-center">
             <tr>
               <th>
                 Time
@@ -65,7 +65,7 @@
           <tbody>
         <% [1,2,3,4,5].each do |phase| %>
             <% (1..5).each do %>
-          <tr>
+          <tr class="rl_data">
             <td class="text-center" width="10%">
                 <% time = time + 2 %>
                 <%= Time.at(time).strftime("%H:%M:%S") %>
