@@ -35,6 +35,8 @@
     <% temp = 1447 %>
     <% altitude = @simulation.x_position %>
     <% descent = altitude / 24 %>
+    <% velocity = descent %>
+    <% time = @simulation.created_at %>
 
       <div class="col-md-12">
         <table class="table table-bordered">
@@ -45,6 +47,9 @@
               </th>
               <th>
                 Alttitude (ft)
+              </th>
+              <th>
+                Velocity
               </th>
               <th>
                 Temp (C&#176;)
@@ -62,12 +67,16 @@
             <% (1..5).each do %>
           <tr>
             <td class="text-center" width="10%">
-                <% @time = @time - 30 %>
-                <%= Time.at(@time).strftime("%H:%M:%S") %>
+                <% time = time + 2 %>
+                <%= Time.at(time).strftime("%H:%M:%S") %>
             </td>
 
             <td class="text-center" width="10%">
                <%= altitude %>
+            </td>
+
+            <td class="text-center" width="10%">
+              <%= velocity %>
             </td>
             
             <td class="text-center" width="10%">
@@ -75,7 +84,9 @@
             </td>
   
             <td class="text-center" width="10%">
-              <%= thrust %> 
+              E1 <%= thrust %> <br>
+              E2 <%= thrust %> <br>
+              E3 <%= thrust %> <br>
             </td>
 
             <td>
@@ -88,11 +99,11 @@
                        <% end %>
                   <% when 2 %>
                         <% if count <  6 %>
-                          Phase 2 - Parachute deplays
+                          Phase 2 - Parachute deploys
                         <% elsif count == 7 %>
                           Phase 2 - Heat shields released 
                         <% else %>
-                          Phase 2 - Free Falling
+                          Phase 2 - Floating
                         <% end %>
                   <% when 3 %>
                         <% if count <= 10 %>
@@ -124,6 +135,7 @@
               <%end %>
               <% count += 1 %>
               <% altitude = altitude - descent %>
+              <% temp = temp - 54 %>
             </td>
           </tr>
             <% end %>
@@ -183,3 +195,4 @@
 
     </div><!-- End of modal dialog div -->
   </div><!-- End of Modal Div -->
+

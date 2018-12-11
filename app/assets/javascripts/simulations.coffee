@@ -2,7 +2,7 @@ $(document).on "turbolinks:load", ->
   $(".clickable-row").click ->
     window.location = $(this).data("href");
     
-$(document).ready ->
+$(document).on "turbolinks:load", ->
   $("#new_simulation").on("ajax:success", (event) ->
     [data, status, xhr] = event.detail
     $("#new_simulation").append xhr.responseText

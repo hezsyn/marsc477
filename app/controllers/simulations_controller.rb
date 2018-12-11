@@ -26,7 +26,7 @@ class SimulationsController < ApplicationController
       render :show
     else 
       flash[:alert] = "Simulation Failed" 
-      render :new
+      redirect_to @simulation
     end
   end
 
