@@ -1,6 +1,7 @@
 class SimulationsController < ApplicationController
 
-  def index    
+  def index
+    @simulations = Simulation.all
   end
 
 	def show

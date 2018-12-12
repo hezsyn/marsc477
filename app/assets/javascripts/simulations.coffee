@@ -8,3 +8,4 @@ $(document).on "turbolinks:load", ->
     $("#new_simulation").append xhr.responseText
   ).on "ajax:error", (event) ->
     $("#new_simulation").append "<p>ERROR</p>"
+
