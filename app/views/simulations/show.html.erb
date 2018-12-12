@@ -52,8 +52,7 @@
             </tr>
           </thead>
           <tbody>
-        <% [1,2,3,4,5].each do |phase| %>
-            <% (1..5).each do %>
+        <% (1..25).each do |step| %>
           <tr class="rl_data">
             <td class="text-center" width="10%">
                 <% time = time + 2 %>
@@ -79,55 +78,66 @@
             </td>
 
             <td>
-              <% case phase %>
-                  <% when 1 %>
-                      <% if count <= 2  %>
-                        Phase 1 - Approaching Mars, communicating with Earth
-                       <% else %>
-                        Phase 1 - Rotating Lander towards Mars surface
-                       <% end %>
-                  <% when 2 %>
-                        <% if count <  6 %>
-                          Phase 2 - Parachute deploys
-                        <% elsif count == 7 %>
-                          Phase 2 - Heat shields released 
-                        <% else %>
-                          Phase 2 - Floating
-                        <% end %>
-                  <% when 3 %>
-                        <% if count <= 10 %>
-                          Phase 3 - Lander separates, deploying lander Parachute
-                        <% else %>
-                          Phase 3 - Lander is falling
-                        <% end %>
-                  <% when 4 %>
-                        <% if count == 16 %>
-                          Phase 4 - Airbags inflate
-                        <% elsif count == 18 || count == 19 %>
-                          Phase 4 - Retro rockets  fire off
-                          <% thrust = 100 %>
-                        <% else %>
-                          Phase 4 - Lander is falling
-                          <% thrust = 0 %>
-                        <% end %>
-                  <% when 5 %>
-                        <% if count == 20  %>
-                          Phase 5 - Parachute cut off / rockets released
-                          <% thrust = 0 %>
-                        <% elsif count == 24 %>
-                          Phase 5 - Lander impacts the ground
-                        <% else %>
-                          Phase 5 - Lander is free falling
-                        <% end %>
-                  <%  else  %>
-                          that is a moment
-              <%end %>
-              <% count += 1 %>
+              <% case step %>
+                    <% when 1 %>
+                    Phase 1 - Approaching Mars, communicating with Earth
+                    <% when 2 %>
+                    Phase 1 - Parachute deployed
+                    <% when 3 %>
+                    Phase 1 - Starting sensing of altitude
+                    <% when 4 %>
+                    Phase 1 - Rotating Lander towards Mars surface
+                    <% when 5 %>
+                    Phase 1 - Rotating Lander towards Mars surface
+                    <% when 6 %>
+                    Phase 2 - Igniting axial and roll engines
+                    <% when 7 %>
+                    Phase 2 - Floating
+                    <% when 8 %>
+                    Phase 2 - Heat shields released
+                    <% when 9 %>
+                    Phase 2 - Engines warming up
+                    <% when 10 %>
+                    Phase 2 - Maintaining altitude
+                    <% when 11 %>
+                    Phase 3 - Engines are hot, releasing parachute
+                    <% when 12 %>
+                    Phase 3 - Lander is falling
+                    <% when 13 %>
+                    Phase 3 - Lander is falling
+                    <% when 14 %>
+                    Phase 3 - Correcting altitude
+                    <% when 15 %>
+                    Phase 3 - Lander is falling
+                    <% when 16 %>
+                    Phase 3 - Lander is falling
+                    <% when 17 %>
+                    Phase 3 - Lander is falling
+                    <% when 18 %>
+                    Phase 4 - Engine shut-off altitude reached, shutting engines
+                    <% when 19 %>
+                    Phase 4 - Airbags inflate
+                    <% thrust += 100 %>
+                    <% when 20 %>
+                    Phase 4 - Retro rockets fire off
+                    <% when 21 %>
+                    Phase 4 - Slowing down
+                    <% thrust -= 100 %>
+                    <% when 22 %>
+                    Phase 4 - Rockets released
+                    <% when 23 %>
+                    Phase 4 - Lander is free falling
+                    <% when 24 %>
+                    Phase 4 - Lander is free falling
+                    <% when 25 %>
+                    Phase 5 - Lander impacts the ground
+                    <% else %> 
+                    System fail
+                  <% end %>
               <% altitude = altitude - descent %>
               <% temp = temp - 54 %>
             </td>
           </tr>
-            <% end %>
         <% end %>
           </tbody>
         </table>
