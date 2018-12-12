@@ -9,4 +9,6 @@ root 'sessions#new'
   resources :users
   resources :sessions
   resources :simulations
+
+  get 'landing', to: 'simulations#landing', as: 'landing'
 end

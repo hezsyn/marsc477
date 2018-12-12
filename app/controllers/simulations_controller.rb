@@ -11,6 +11,11 @@ class SimulationsController < ApplicationController
     @time = @simulation.created_at
 	end
 
+  def landing 
+    @simulations = Simulation.all
+    @simulation = Simulation.new
+  end
+
   def new
     @simulations = Simulation.all
     @simulation = Simulation.new
@@ -24,8 +29,8 @@ class SimulationsController < ApplicationController
     @simulation.user_id = session[:user_id]
     @simulation.success?
     if @simulation.save
-      flash[:notice] = "Simulation submitted sucessfully."
-      render :show
+      flash[:notice] = "Simulation created successfully."
+      redirect_to @simulation
     else 
       flash[:alert] = "Simulation Failed" 
       redirect_to @simulation

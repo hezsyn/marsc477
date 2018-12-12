@@ -1,50 +1,8 @@
 <div class="row">
-  <div class="col-md-3">
-
-    <div class="row">
-      
-      <div class="col-md-4">
-        <%= render 'btnFunctions' %> 
-      </div>
-
-    </div>
-
-  </div>
-
   <div class="col">
+    <%= render 'layouts/alerts' %>
     <h1 class="text-center">
       Welcome to the Mars Simulation
     </h1>
   </div>
 </div>
-  
-  <div id="newSimulation" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">New Simulation</h4>
-          </div>
-
-          <div class="modal-body">
-            <%= form_for @simulation do |f| %>
-
-              <div class="input-group mb-3">
-                <span class="input-group-prepend"><%= @time%></span>
-              </div>
-              <br>
-              <div class="input-group mb-3">
-                <span class="input-group-prepend">
-                <%= f.label 'Altitude', class: "input-group-text" %></span>
-                <%= f.text_area :x_position, class: "form-control" %>
-              </div>
-
-          <div class="modal-footer">
-              <%= f.submit 'Create Simulation', class: "btn btn-warning"  %>
-              <%= button_tag 'Close', class: "btn btn-default", "data-dismiss" => "modal" %>
-            <% end %>
-          </div>
-        </div>
-
-    </div><!-- End of modal dialog div -->
-  </div><!-- End of Modal Div -->
