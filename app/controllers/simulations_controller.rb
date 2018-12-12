@@ -2,6 +2,7 @@ class SimulationsController < ApplicationController
 
   def index
     @simulations = Simulation.all
+    @simulation = Simulation.new
   end
 
 	def show
