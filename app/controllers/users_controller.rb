@@ -49,8 +49,10 @@ class UsersController < ApplicationController
   end
 
  def destroy
-    session[:user_id] = nil
-    redirect_to root_url, flash[:notice] = "Logged out"
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to users_path
   end
 
   private

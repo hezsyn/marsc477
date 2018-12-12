@@ -23,7 +23,18 @@
         <%= render 'layouts/errors', kitty: @user %>
       </div>
     </div>
-  	<%= render 'userForm' %>
+    <div class="row">
+      <div class="col">
+    	<%= render 'userForm' %>
+      <br>
+      <% if session[:user_id] != @user.id %>
+        <%= link_to 'Delete User', user_path(@user.id),
+                              class: "btn btn-danger", 
+                              method: :delete, 
+                              data: { confirm: "Are you sure? This cannot be undone"  } %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 </div>
