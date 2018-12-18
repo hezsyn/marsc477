@@ -22,10 +22,10 @@ class UsersController < ApplicationController
     @users = User.all
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "User has been created"
+      flash.now.notice = "User has been created"
       render 'show'
     else
-      flash[:alert] = "Form is invalid" 
+      flash.now.alert = "Form is invalid" 
       render 'new'
     end
   end
@@ -42,9 +42,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      flash[:notice] = "User #{@user.user_name} has updated"
+      flash.now.notice = "User #{@user.user_name} has updated"
     else
-      flash[:alert] = "Failed to update user"
+      flash.now.alert = "Failed to update user"
     end
     render 'show'
   end

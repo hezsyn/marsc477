@@ -29,11 +29,9 @@ class SimulationsController < ApplicationController
     @simulation.user_id = session[:user_id]
     @simulation.success?
     if @simulation.save
-      flash[:notice] = "Simulation created successfully."
-      redirect_to @simulation
+      redirect_to @simulation, notice: "Simulation created successfully."
     else 
-      flash[:alert] = "Simulation Failed" 
-      redirect_to @simulation
+      redirect_to @simulation, alert: "Simulation Failed" 
     end
   end
 
@@ -45,10 +43,10 @@ class SimulationsController < ApplicationController
     @simulation.user_id = session[:user_id]
     @simulation.success?
     if @simulation.save
-      flash[:notice] = "Simulation submitted sucessfully."
+      flash.now.notice = "Simulation submitted sucessfully."
       render :show
     else 
-      flash[:alert] = "Simulation Failed" 
+      flash.now.alert = "Simulation Failed" 
       render :new
     end
   end
