@@ -1,3 +1,147 @@
+commit c5786abe9cfff7d5e4a522d6fe3d126bd23bb90c
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Wed Dec 12 08:59:21 2018 -0800
+
+    Users can now be deleted.
+
+commit a001575df2cb9d30653ed04379edacec53dc991e
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Wed Dec 12 08:38:30 2018 -0800
+
+    Messages have been changed.
+
+commit 55b8d7746e9f87df8359ae1c6ac45f3d9acdbc34
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 19:21:10 2018 -0800
+
+    Added the list of sims on landing of sims
+
+commit 2ce897ed333a6b03b645a3af76ec5b52dc9e5807
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 19:05:57 2018 -0800
+
+    Landing page created
+
+commit 894cd18f184f29f46c0ee07a1410521e89b52d18
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 18:43:49 2018 -0800
+
+    tweaked the index
+
+commit d9a7182f7ebb2261295ff0881444976d132286a6
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 18:25:52 2018 -0800
+
+    Index page is first
+
+commit 4cc5f48d3cc510a23f8ab595447eae2ccb9596da
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 15:34:03 2018 -0800
+
+    testing
+
+commit aa5ccef376250e2044736c7c732f3e91e0736d86
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 15:07:11 2018 -0800
+
+    Added some thrusters and stuff
+
+commit 7a8ca1bbac0ce1e186d7c32b1f577f197caa92cc
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 11 14:21:38 2018 -0800
+
+    Added Phases to descent
+
+commit a7feba9278b139151cb45dcb05d7f1436af802c8
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Dec 7 16:26:44 2018 -0800
+
+    Added some time to the simulation
+
+commit e2bebfe637eeb1837fa0b40d29031f7c04a73baf
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Dec 7 15:43:16 2018 -0800
+
+    Fixed some issues
+
+commit 58be1515669c024d04db2b322b5e7f932a87b6fc
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Dec 7 15:28:13 2018 -0800
+
+    Sims working
+
+commit 21111102adcf79ea8956740df43723bf6b37a860
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Dec 7 15:09:25 2018 -0800
+
+    Simulations have changed
+
+commit 11fb7acd35b7f7b349f8d69db1febe95a2824894
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Dec 7 07:59:04 2018 -0800
+
+    User error messages fixed
+
+commit bd4596b4d2ce99e7020088499494f45f6534da6b
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Thu Dec 6 22:26:21 2018 -0800
+
+    Error message when anything missing on User
+
+commit bb8ada7b258b3b12f008be4061ff9abed039cfd2
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Thu Dec 6 22:11:41 2018 -0800
+
+    Error message for failure to update user
+
+commit 6433fbfb7a7fcf85aaaa32979ddd82d606403218
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Dec 4 23:06:30 2018 -0800
+
+    Table Creation for phases
+
+commit 30a84046ea05a4d3d7a7cb6d51cd197bc1741ae3
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Fri Nov 30 16:26:57 2018 -0800
+
+    Landed?
+
+commit 0b54bc224be35a4d8e5bb76cbffdf76d794076eb
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Nov 27 23:03:34 2018 -0800
+
+    Something to the simulation controller
+
+commit 01d97d25f80b717232597cc8824ec92707622f4d
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Nov 27 22:17:43 2018 -0800
+
+    Simulation setup
+
+commit e4f9049baafa013f705a70a9f921d101bae92853
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Nov 27 18:11:46 2018 -0800
+
+    Fixed the input field for user
+
+commit 7d5ee01ba3e6492016861970f67918895a30a1b2
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Nov 27 18:08:55 2018 -0800
+
+    Username is modifiable
+
+commit b479a364e08872a95878eebae1f637c38f3c0e4f
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Nov 27 18:03:09 2018 -0800
+
+    Fixed the view
+
+commit cf3d7db89a2d4b66ebbc998c981180064f766600
+Author: Brandon <jebster1988@hotmail.com>
+Date:   Tue Nov 27 07:36:07 2018 -0800
+
+    Nightly
+
 commit e6a39e0bf41644403fb09e0c5a7279111049e5ca
 Author: Brandon <jebster1988@hotmail.com>
 Date:   Wed Nov 21 07:39:52 2018 -0800

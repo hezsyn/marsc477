@@ -23,10 +23,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "User has been created"
+      render 'show'
     else
       flash[:alert] = "Form is invalid" 
+      render 'new'
     end
-    render 'show'
   end
 
   def edit

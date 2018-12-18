@@ -1,24 +1,15 @@
-# README
+What is needed to run this application...
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Easiest would be to view this website at marsc477.herokuapp.com
 
-Things you may want to cover:
+Interacting with the files, just need a text editor.  Good ones to use is either Atom or Sublime Text.  
 
-* Ruby version
+Need to have...
+    * Ruby 
+    * Ruby on Rails 
+    * PostgreSQL
 
-* System dependencies
+I find it easiest to do this on Linux.  It is possible to setup Windows, I've found it easiest to follow this tutorial.
+https://gorails.com/setup/windows/10
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+When I was developing on Windows when using Rails, I would use this when I would setup the system.  
